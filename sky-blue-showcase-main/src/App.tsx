@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => ( // Minor change to trigger new deploy
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />

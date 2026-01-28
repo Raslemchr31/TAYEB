@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mr.Tayeb - Feminine Sky Blue Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap');
+
+@layer base {
+  :root {
+    /* Sky Blue Feminine Palette */
+    --background: 200 30% 98%;
+    --foreground: 210 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 25% 15%;
+
+    /* Primary - Soft Sky Blue */
+    --primary: 200 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Warm Beige */
+    --secondary: 35 30% 94%;
+    --secondary-foreground: 35 25% 25%;
+
+    --muted: 200 20% 95%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Accent - Soft Rose Gold */
+    --accent: 15 50% 90%;
+    --accent-foreground: 15 40% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 25% 88%;
+    --input: 200 25% 88%;
+    --ring: 200 70% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Brand Colors */
+    --sky-light: 200 80% 95%;
+    --sky-medium: 200 70% 75%;
+    --sky-dark: 200 65% 45%;
+    --gold: 42 65% 55%;
+    --gold-light: 42 60% 85%;
+    --cream: 40 30% 96%;
+    --wood: 30 40% 35%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(200 80% 95%) 0%, hsl(200 70% 88%) 50%, hsl(200 60% 92%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(200 70% 55%) 0%, hsl(200 75% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 30% 98%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 65% 60%) 0%, hsl(35 55% 50%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(200 50% 50% / 0.12);
+    --shadow-card: 0 8px 30px -8px hsl(200 50% 40% / 0.15);
+    --shadow-elevated: 0 20px 50px -15px hsl(200 50% 30% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 25% 8%;
+    --foreground: 200 20% 95%;
+    --card: 210 25% 12%;
+    --card-foreground: 200 20% 95%;
+    --popover: 210 25% 12%;
+    --popover-foreground: 200 20% 95%;
+    --primary: 200 65% 55%;
+    --primary-foreground: 210 25% 8%;
+    --secondary: 210 20% 18%;
+    --secondary-foreground: 200 20% 90%;
+    --muted: 210 20% 18%;
+    --muted-foreground: 200 15% 60%;
+    --accent: 200 30% 20%;
+    --accent-foreground: 200 20% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 200 65% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-tajawal antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-cairo font-bold;
+  }
+}
+
+@layer components {
+  .container-rtl {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+    direction: rtl;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20;
+  }
+
+  /* Decorative elements */
+  .decorative-circle {
+    @apply absolute rounded-full opacity-20;
+    background: radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%);
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
